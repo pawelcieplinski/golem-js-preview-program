@@ -21,7 +21,12 @@
                 yagnaOptions: {apiKey: apiKey.value}
             });
             await executor.run(function(ctx) {
-                return ctx.run(`node -e "${code.value.toString()}"`);
+                switch (packageHash.value) {
+                    case '456733de53b30f3b7a96ccc94f99dd57db1d51d8c8cb727ceb00e639':
+                        return ctx.run(`node -e "${code.value.toString()}"`);
+                    case '81cb2da7e485dbdcc39e8354f05c84b3de170938f7291f3e4cba4776':
+                        return ctx.run(`python3 -c "${code.value.toString()}"`);
+                }
             }).then(function(result) {
                 run.removeAttribute('disabled');
                 outputRow.classList.toggle('d-none');
@@ -51,12 +56,13 @@
                 <h5>Settings</h5>
             </div>
             <div class="col">
-                <input id="apiKey" class="form-control" placeholder="YAGNA_APPKEY" />
+                <input id="apiKey" class="form-control" placeholder="YAGNA_APPKEY" value="62afe32bfd604695b1400605b5cb6e83" />
             </div>
             <div class="col">
 
                 <select id="packageHash" class="form-select">
                     <option value="456733de53b30f3b7a96ccc94f99dd57db1d51d8c8cb727ceb00e639">NodeJS</option>
+                    <option value="81cb2da7e485dbdcc39e8354f05c84b3de170938f7291f3e4cba4776">Python</option>
                 </select>
             </div>
             <div class="col">
