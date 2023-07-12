@@ -9,6 +9,6 @@
   "author": "Golem Factory GmbH",
   "license": "MIT",
   "dependencies": {
-    "yajsapi": "^0.7.0-alpha.0"
+    "yajsapi": "^0.7.0-alpha.2"
   }
 }

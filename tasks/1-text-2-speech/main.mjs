@@ -2,7 +2,7 @@ import { TaskExecutor } from "yajsapi";
 
 (async function main() {
   let textToBeConvertedToSpeech = "This is a sample text to be converted to speech.";
-  const executor = await TaskExecutor.create("69d42cc2cbe06474d75945a20cf4d084f09ebae765d27208dc968a74");
+  const executor = await TaskExecutor.create("48fa1248c8db7a8148fa23c8cfe32bd18cafa0d5d12c9a3178fb5104");
   if (process.argv.length > 2 && process.argv[2]) {
     console.log("Using command line argument as text to be converted to speech.")
     textToBeConvertedToSpeech = process.argv[2];

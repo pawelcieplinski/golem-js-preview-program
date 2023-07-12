@@ -22,7 +22,7 @@
             });
             await executor.run(function(ctx) {
                 switch (packageHash.value) {
-                    case '456733de53b30f3b7a96ccc94f99dd57db1d51d8c8cb727ceb00e639':
+                    case 'a4c4dcb4f5fc22b82ab4df274524a9fdbcfa10b50dbe79dad2bd82e9':
                         return ctx.run(`node -e "${code.value.toString()}"`);
                     case '81cb2da7e485dbdcc39e8354f05c84b3de170938f7291f3e4cba4776':
                         return ctx.run(`python3 -c "${code.value.toString()}"`);
@@ -61,7 +61,7 @@
             <div class="col">
 
                 <select id="packageHash" class="form-select">
-                    <option value="456733de53b30f3b7a96ccc94f99dd57db1d51d8c8cb727ceb00e639">NodeJS</option>
+                    <option value="a4c4dcb4f5fc22b82ab4df274524a9fdbcfa10b50dbe79dad2bd82e9">NodeJS</option>
                     <option value="81cb2da7e485dbdcc39e8354f05c84b3de170938f7291f3e4cba4776">Python</option>
                 </select>
             </div>
