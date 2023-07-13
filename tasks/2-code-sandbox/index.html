@@ -14,8 +14,8 @@
         const outputRow = document.getElementById('outputRow');
         const output = document.getElementById('output');
 
-        function normalizeQuotes (str) {
-            return str.replace(/"/g, '\\"');
+        function normalizeQuotes (str, escapeCharacter = '\\"') {
+            return str.replace(/"/g, escapeCharacter);
         }
 
         run.addEventListener('click', async function() {
@@ -29,7 +29,7 @@
                     case 'a4c4dcb4f5fc22b82ab4df274524a9fdbcfa10b50dbe79dad2bd82e9':
                         return ctx.run(`node -e "${normalizeQuotes(code.value.toString())}"`);
                     case '81cb2da7e485dbdcc39e8354f05c84b3de170938f7291f3e4cba4776':
-                        return ctx.run(`python -c "${normalizeQuotes(code.value.toString())}"`);
+                        return ctx.run(`python -c "${normalizeQuotes(code.value.toString(), '\\\"')}"`);
                 }
             }).then(function(result) {
                 run.removeAttribute('disabled');
