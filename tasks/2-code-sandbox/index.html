@@ -14,6 +14,10 @@
         const outputRow = document.getElementById('outputRow');
         const output = document.getElementById('output');
 
+        function normalizeQuotes (str) {
+            return str.replace(/"/g, '\\"');
+        }
+
         run.addEventListener('click', async function() {
             run.setAttribute('disabled','disabled');
             var executor = await TaskExecutor.create({
@@ -23,9 +27,9 @@
             await executor.run(function(ctx) {
                 switch (packageHash.value) {
                     case 'a4c4dcb4f5fc22b82ab4df274524a9fdbcfa10b50dbe79dad2bd82e9':
-                        return ctx.run(`node -e "${code.value.toString()}"`);
+                        return ctx.run(`node -e "${normalizeQuotes(code.value.toString())}"`);
                     case '81cb2da7e485dbdcc39e8354f05c84b3de170938f7291f3e4cba4776':
-                        return ctx.run(`python3 -c "${code.value.toString()}"`);
+                        return ctx.run(`python -c "${normalizeQuotes(code.value.toString())}"`);
                 }
             }).then(function(result) {
                 run.removeAttribute('disabled');
@@ -56,7 +60,7 @@
                 <h5>Settings</h5>
             </div>
             <div class="col">
-                <input id="apiKey" class="form-control" placeholder="YAGNA_APPKEY" value="62afe32bfd604695b1400605b5cb6e83" />
+                <input id="apiKey" class="form-control" placeholder="YAGNA_APPKEY" />
             </div>
             <div class="col">
 
