@@ -1,0 +1,24 @@
+{
+  "name": "text-compare",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Text comparison example",
+  "scripts": {
+    "main": "ts-node ./main.ts --string='Hello World'",
+    "token": "ts-node ./main.ts --string='Hello World' --token"
+  },
+  "author": "Golem Factory GmbH",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.19.0"
+  },
+  "dependencies": {
+    "commander": "^9.1.0",
+    "ts-node": "^10.7.0",
+    "yajsapi": "^0.7.0-alpha.2"
+  },
+  "devDependencies": {
+    "@types/node": "18",
+    "typescript": "^4.6.3"
+  }
+}
